@@ -1,0 +1,771 @@
+* {
+  text-decoration: none;
+  color: var(--secondary-color);
+  padding: 0;
+  margin: 0;
+}
+
+@font-face {
+  font-family: "Raleway";
+  src: url("../fonts/Raleway-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit-VariableFont_wght.ttf");
+}
+
+/* Début des variables dark mode */
+
+:root {
+  --primary-color: #f9f9f9;
+  --secondary-color: #504C4C;
+  --tertiary-color: #B0C4DE;
+  --quaternary-color: #E7E4E4;
+  --quinary-color : #8C8C8C;
+  --senary-color : #FFC44D;
+  --septenary-color : #D9D9D9;
+}
+
+[dark-theme="dark"] {
+  --primary-color: #504C4C;
+  --secondary-color: #f9f9f9;
+  --tertiary-color: #374151;
+  --quaternary-color: #393939;
+  --quinary-color : #302E2E;
+  --senary-color : rgb(187,124,4);
+  --septenary-color : #8C8C8C;
+}
+
+/* Fin des variables dark mode */
+
+html {
+  font-family: Raleway, sans-serif;
+}
+
+header {
+  margin-bottom: 150px;
+}
+body {
+  background-color: var(--primary-color);
+  overflow-x: hidden;
+}
+
+h1, h4, a {
+  font-family: outfit, sans-serif;
+}
+
+h3 {
+  margin-bottom: 20px;
+}
+
+a {
+    font-weight: 600;
+    white-space: nowrap;
+    color: var(--secondary-color);
+    text-decoration: none;
+  
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--senary-color);
+  border: 2px solid var(--secondary-color);
+  border-radius: 5px;
+  transition: .5s;
+}
+
+input {
+  border: 2px solid var(--secondary-color);
+  background-color: var(--primary-color);
+  padding: 20px 10px;
+  border-radius: 5px;
+}
+
+select {
+  background-color: var(--primary-color);
+  border: 2px solid var(--secondary-color);
+  border-radius: 5px;
+  transition: .5s;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+textarea {
+  background-color: var(--primary-color);
+  border: 2px solid var(--secondary-color);
+  border-radius: 5px;
+  transition: .5s;
+  padding: 10px 10px;
+}
+
+/* Début du header */
+
+.logo {
+    width: 75px;
+    height: 75px;
+}
+
+.navbar-header {
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--quaternary-color);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  box-shadow: var(--quinary-color) 0 0 15px 0;
+}
+
+.contenair-header {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Début boutton dark mode */
+
+
+.theme {
+  cursor: pointer;
+}
+
+.toggle-checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.toggle-slot {
+  font-size: 10px;
+  position: relative;
+  height: 3.5em;
+  width: 7em;
+  border: 0px solid transparent;
+  border-radius: 10em;
+  background-color: var(--primary-color);
+  transition: background-color 250ms;
+}
+
+.toggle-checkbox:checked ~ .toggle-slot {
+  background-color: var(--primary-color);
+}
+
+.toggle-button {
+  transform: translate(0.3em, 0.25em);
+  position: absolute;
+  height: 3em;
+  width: 3em;
+  border-radius: 50%;
+  background-color: var(--senary-color);
+  box-shadow: inset 0px 0px 0px 0.75em var(--tertiary-color);
+  transition: background-color 250ms, border-color 250ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .toggle-button {
+  background-color: var(--tertiary-color);
+  box-shadow: inset 0px 0px 0px 0.75em var(--senary-color);
+  transform: translate(3.65em, 0.25em);
+}
+
+.sun-icon {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  color: #ffbb52;
+}
+
+.sun-icon-wrapper {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  opacity: 1;
+  transform: translate(2em, 2em) rotate(15deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .sun-icon-wrapper {
+  opacity: 0;
+  transform: translate(3em, 2em) rotate(0deg);
+}
+
+.moon-icon {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  color: white;
+}
+
+.moon-icon-wrapper {
+  position: absolute;
+  height: 6em;
+  width: 6em;
+  opacity: 0;
+  transform: translate(11em, 2em) rotate(0deg);
+  transform-origin: 50% 50%;
+  transition: opacity 150ms, transform 500ms cubic-bezier(.26,2.5,.46,.71);
+}
+
+.toggle-checkbox:checked ~ .toggle-slot .moon-icon-wrapper {
+  opacity: 1;
+  transform: translate(2em, 2em) rotate(-15deg);
+}
+
+/* Fin boutton Dark Mode */
+
+.fa-bars {
+  display: none;
+}
+/* Fin du Header */
+
+/* Début page index */
+
+  .texte-acceuil {
+    width: 800px;
+}
+
+  h1 {
+    margin-bottom: 25px;
+  }
+
+  .texte-avantage {
+    background-color: var(--tertiary-color);
+    margin-bottom: 30px;
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    border: 2px solid var(--secondary-color);
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .texte-avantage p {
+    margin-bottom: 15px;
+  }
+
+  .otomai {
+    width: 200px;
+    height: 200px;
+  }
+
+  .texte-a-propos {
+    background-color: var(--tertiary-color);
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    border: 2px solid var(--secondary-color);
+    align-items: center;
+  }
+
+  .texte-a-propos p {
+    margin-bottom: 10px;
+  }
+
+  .texte-un h4 {
+    margin-bottom: 20px;
+  }
+
+  .logo-a-propos {
+    width: 120px;
+    height: 120px;
+    transform: rotate(10deg);
+  }
+
+/* Fin page index */
+
+/* Début du footer */
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    left: 50%;
+    margin: 1.4rem auto 0 auto;
+    width: 80%;
+    border-top: 3px solid;
+    border-color: var(--tertiary-color);
+    font-weight: bold;
+    margin-top: 100px;
+  }
+
+  footer p {
+    white-space: wrap;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  @media screen and (min-width: 980px) {
+    footer {
+      width: 55%;
+    }
+  }
+
+  @media screen and (min-width: 1200px) {
+    footer {
+      width: 45%;
+    }
+  }
+
+  /* Fin du footer */
+
+
+/* Début page inscription et connexion */
+
+  .form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--tertiary-color);
+    padding: 20px;
+    border: 2px solid var(--secondary-color);
+    border-radius: 10px;
+    text-align: center;
+    font-size: 20px;
+    
+    align-items: center;
+  }
+  
+  .form input {
+    width: 80%;
+    height: 2px;
+  }
+  
+ 
+  .form button {
+    width: 100%;
+    font-size: 20px;
+    outline: none;
+    height: 45px;
+    border-radius: 5px;
+    border: 2px solid var(--secondary-color);
+    width: 50%;
+  }
+
+  .button-login {
+    width: 60% !important;
+  }
+
+  ::placeholder {
+    color: var(--secondary-color);
+
+  }
+
+  select .select-login-signin {
+    width: 70%;
+}
+
+.erreur-couleur {
+  color: red;
+}
+
+.compte-couleur {
+  color: green;
+}
+
+/* Fin page inscription et connexion */
+
+
+/* Début page mes monstres */
+
+.contenair-monstres {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mes-monstres {
+  background-color: var(--tertiary-color);
+    margin-bottom: 30px;
+    border-radius: 10px;
+    padding: 30px;
+    border: 2px solid;
+    width: 700px;
+}
+
+.form-monstres {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.form-monstres button {
+  width: 15%;
+  font-size: 20px;
+  outline: none;
+  border: none;
+  height: 40px;
+  border-radius: 5px;
+  border: 2px solid var(--secondary-color);
+  width: 90px;
+  align-items: center;
+}
+
+.filtre-monstres {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+  width: 60%;
+  gap: 10%;
+}
+
+.input-monstres {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding-left: 10px;
+  width: 180px;
+}
+
+.input-monstres {
+  height: 41px;
+}
+
+.form-groupe {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+select.select-monstre {
+  width: 180px;
+}
+
+.mes-mobs {
+  background-color: var(--tertiary-color);
+  margin-bottom: 30px;
+  border-radius: 10px;
+  padding: 30px;
+  border: 2px solid;
+  width: 800px;
+}
+
+.monstre-card .monstre-nombre .ajaxboutons {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  border: 1px solid #636363;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: #636363;
+  border-radius: 2px;
+  transition: all 0.1s ease-in-out;
+}
+
+.monstre-card .monstre-nombre .nombre {
+  font-weight: bold;
+  text-align: right;
+  margin: 0 5px;
+}
+
+.monstre-rechprop label.label-rechprop {
+  font-size: 0.9em;
+  font-weight: normal;
+  padding: 5px 8px;
+  background: #DEDEDE;
+  cursor: pointer;
+  opacity: 0.6;
+  text-align: center;
+  color: #383838;
+  margin: 0;
+  min-width: 40px;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+}
+
+.monstre-rechprop input.radio-rechprop:checked + .label-rechprop {
+    opacity: 1;
+    color: white;
+    background-color: #636363;
+    transition: all 0.2s ease-in-out;
+}
+
+
+
+/* Fin page mes monstres */
+
+
+/* Début page mon profil */
+
+.contenair-profil {
+  background-color: var(--tertiary-color);
+  margin-bottom: 30px;
+  border-radius: 10px;
+  padding: 30px;
+  border: 2px solid;
+  width: 700px;
+}
+
+
+.photo-profil {
+    border-radius: 10px;
+    background: var(--primary-color);
+    width: 100px;
+    border: 2px solid var(--secondary-color);
+}
+
+.form-profil {
+  display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+    padding: 10px 10px;
+    width: 80%;
+}
+
+.form-profil input {
+  padding: 10px 10px;
+}
+
+.contenair-profil button {
+  font-size: 20px;
+  height: 45px;
+  width: 120px;
+  margin: auto;
+}
+
+.contenu-profil {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contenu-top {
+  display: flex;
+  align-items: center;
+  gap: 10%;
+  margin-bottom: 10px;
+}
+
+.description-joueur {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contenu-photo-profil {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-left: 10px;
+}
+
+.area-profil {
+  height: 120px;
+}
+
+/* Fin page mon profil */
+
+/* Début page kralamoure */
+
+.container-kralamoure {
+  background-color: var(--tertiary-color);
+  margin-bottom: 30px;
+  border-radius: 10px;
+  padding: 30px;
+  border: 2px solid var(--secondary-color);
+  width: 800px;
+}
+.table-responsive {
+  margin-top: 15px;
+}
+.table-jour-semaine {
+  width: 100%;
+  max-width: 100%;
+}
+
+.table>:not(caption)>*>* {
+  background-color: var(--tertiary-color);
+  color: var(--secondary-color);
+}
+
+td {
+  height: 70px;
+  width: 70px;
+}
+
+td.today {
+  background: var(--septenary-color);
+}
+
+
+
+.ajouter_event {
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+
+/* Fin page kralamoure */
+
+
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: var(--primary-color);
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+.section-commu {
+  
+  background-color: var(--tertiary-color);
+  /* margin-bottom: 30px; */
+  border-radius: 10px;
+  padding: 30px;
+  border: 2px solid var(--secondary-color);
+  width: 800px;
+}
+
+.feca {
+  width: 400px;
+}
+
+.contenair-commu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+.join_event ,.edit_event {
+  cursor: pointer;
+  width: 40px;
+  display: block;
+}
+
+
+
+@media (max-width: 992px) {
+
+  .texte-acceuil {
+    width: 80%;
+}
+  .container-kralamoure {
+    width: 80%;
+  }
+
+  .section-commu {
+    width: 80%;
+  }
+
+  .mes-monstres {
+    width: 40%;
+}
+  
+  .filtre-monstres {
+    flex-direction: column;
+    align-items: center;
+}
+
+  .form-groupe {
+    margin-bottom: 15px;
+  }
+  }
+
+
+
+
+@media (max-width: 768px) {
+
+  .fa-bars {
+    display: flex;
+    width: auto;
+    position: absolute;
+    right: 0;
+    margin-right: 15px;
+  }
+
+  .lien-nav {
+    display: none;
+  }
+
+  .lien-nav {
+    display: none;
+  }
+
+  .logo {
+    width: 60px;
+    height: 60px;
+  }
+
+  label.theme {
+    position: absolute;
+    left: 0;
+    margin: auto;
+    margin-left: 15px;
+}
+
+
+  .texte-avantage {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .texte-a-propos {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .contenair-profil {
+    width: 80%;
+  }
+  
+  .contenu-top {
+    flex-direction: column;
+  }
+
+  .feca {
+    width: 200px;
+  }
+}
+
+
+
+
+
